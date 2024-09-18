@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Prodi;
 use Illuminate\Http\Request;
 
 class ProdiController extends Controller
@@ -11,7 +12,12 @@ class ProdiController extends Controller
      */
     public function index()
     {
-        //
+        //Panggil model fakultas
+        $result = Prodi::all();
+        //dd($result);
+
+        //kirim data $result ke views fakultas index.php
+        return view('prodi.index')->with('prodi', $result);
     }
 
     /**
