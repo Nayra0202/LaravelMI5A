@@ -13,6 +13,7 @@
                 <th>No Hp</th>
                 <th>Alamat</th>
                 <th>Prodi</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +27,7 @@
                 <td>{{ $row ['hp']}}</td>
                 <td>{{ $row ['alamat']}}</td>
                 <td>{{ $row ['prodi']['nama']}}</td>
-                <td><a href="{{ route('mahasiswas.show', $row['id']) }}"
+                <td><a href="{{ route('mahasiswas.show', $row['id'] ) }}"
                 class="btn btn-primary btn-xs">Show</a></td>
             </tr>
             @endforeach
