@@ -39,8 +39,9 @@ class ProdiController extends Controller
         //validasi input sblm simpan
         $input = $request->validate( [
             "nama" => "required|unique:prodi",
-            "kapordi" => "required",
-            "singkatan" => "required"
+            "kaprodi" => "required",
+            "singkatan" => "required",
+            "fakultas_id"   => "required"
         ]);
 
         //simpan

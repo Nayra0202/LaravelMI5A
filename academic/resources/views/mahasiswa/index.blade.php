@@ -2,6 +2,7 @@
 
 @section('content')
     <h4>Mahasiswa</h4>
+    <a href="{{ route('mahasiswas.create') }}" class="btn btn-primary">Tambah</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -17,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ( $mahasiswas as $row )
+            @foreach ( $mahasiswa as $row )
             <tr>
                 <td>{{ $row ['npm']}}</td>
                 <td>{{ $row ['nama']}}</td>

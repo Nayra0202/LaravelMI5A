@@ -13,7 +13,7 @@ class Prodi extends Model
     use HasFactory, HasUuids;
 
     protected $table = "prodi";
-    protected $fillable = ['nama','kaprodi','singkatan'];
+    protected $fillable = ['nama','kaprodi','singkatan','fakultas_id'];
 
     public function fakultas(): BelongsTo{
         return $this->belongsTo(fakultas::class, 'fakultas_id','id');
