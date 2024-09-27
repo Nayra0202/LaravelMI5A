@@ -6,17 +6,17 @@
         @csrf
         Nama
         @error('nama')
-{{$message}}
+        {{$message}}
         @enderror
         <input type="text" name="nama" id="" class="form-control mb-2">
         KaProdi
                 @error('kaprodi')
-{{$message}}
+        {{$message}}
         @enderror
         <input type="text" name="kaprodi" id="" class="form-control mb-2">
         Singkatan
                 @error('singkatan')
-{{$message}}
+        {{$message}}
         @enderror
         <input type="text" name="singkatan" id="" class="form-control mb-2">
         Fakultas

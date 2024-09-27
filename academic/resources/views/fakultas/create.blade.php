@@ -5,7 +5,7 @@
     <form action="{{ route('fakultas.store') }}" method="post">
         @csrf
         Nama
-        <input type="text" name="nama" id="" class="form-control mb-2">
+        <input type="text" name="nama" id="" class="form-control mb-2" value="">
         Dekan
         <input type="text" name="dekan" id="" class="form-control mb-2">
         Singkatan

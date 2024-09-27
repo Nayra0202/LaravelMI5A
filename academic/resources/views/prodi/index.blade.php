@@ -10,6 +10,7 @@
                 <th>KaProdi</th>
                 <th>Singkatan</th>
                 <th>Fakultas</th>
+                <th>#</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,7 @@
                 <td>{{ $row ['kaprodi']}}</td>
                 <td>{{ $row ['singkatan']}}</td>
                 <td>{{ $row ['fakultas']['nama']}}</td>
+                <td><a href="{{ route('prodi.edit', $row['id'])}}" class="btn btn-xs btn-warning">Ubah</a></td>
             </tr>
             @endforeach
 
