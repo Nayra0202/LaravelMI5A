@@ -29,7 +29,13 @@
                 <td>{{ $row ['alamat']}}</td>
                 <td>{{ $row ['prodi']['nama']}}</td>
                 <td><a href="{{ route('mahasiswas.show', $row['id'] ) }}"
-                class="btn btn-primary btn-xs">Show</a></td>
+                class="btn btn-primary btn-xs">Show</a>
+                    <form action="{{ route ('mahasiswas.destroy', $row['id'])}}" method="post" style="display: inline">
+                        @method("DELETE")
+                        @csrf
+                        <button class="btn btn-xs btn-danger">Hapus</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

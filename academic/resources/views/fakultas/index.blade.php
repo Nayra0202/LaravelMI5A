@@ -13,16 +13,20 @@
             </tr>
         </thead>
         <tbody>
-
             @foreach ( $fakultas as $row )
             <tr>
                 <td>{{ $row ['nama']}}</td>
                 <td>{{ $row ['dekan']}}</td>
                 <td>{{ $row ['singkatan']}}</td>
-                <td><a href="{{ route('fakultas.edit', $row['id'])}}" class="btn btn-xs btn-warning">Ubah</a></td>
+                <td><a href="{{ route('fakultas.edit', $row['id'])}}" class="btn btn-xs btn-warning">Ubah</a>
+                    <form action="{{ route ('fakultas.destroy', $row['id'])}}" method="post" style="display: inline">
+                        @method("DELETE")
+                        @csrf
+                        <button class="btn btn-xs btn-danger">Hapus</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
-
         </tbody>
     </table>
 @endsection

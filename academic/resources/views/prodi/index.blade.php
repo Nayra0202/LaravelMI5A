@@ -21,7 +21,13 @@
                 <td>{{ $row ['kaprodi']}}</td>
                 <td>{{ $row ['singkatan']}}</td>
                 <td>{{ $row ['fakultas']['nama']}}</td>
-                <td><a href="{{ route('prodi.edit', $row['id'])}}" class="btn btn-xs btn-warning">Ubah</a></td>
+                <td><a href="{{ route('prodi.edit', $row['id'])}}" class="btn btn-xs btn-warning">Ubah</a>
+                    <form action="{{ route ('prodi.destroy', $row['id'])}}" method="post" style="display: inline">
+                        @method("DELETE")
+                        @csrf
+                        <button class="btn btn-xs btn-danger">Hapus</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
 
