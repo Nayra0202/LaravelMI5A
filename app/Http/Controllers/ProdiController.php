@@ -106,4 +106,13 @@ class ProdiController extends Controller
         $prodi->delete();
         return redirect()->route('prodi.index')->with('success', "Data Fakultas berhasil dihapus");
     }
+
+     public function getProdi(){
+        //$response['data'] = Prodi::all();
+        $response['data'] = Prodi::with('fakultas')->get();
+        $response['message'] = 'List data prodi';
+        $response['success'] = true;
+
+        return response()->json($response, 200);
+    }
 }
