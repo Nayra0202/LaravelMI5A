@@ -129,6 +129,6 @@ class FakultasController extends Controller
             $response['message'] = $request->nama."gagal disimpan";
             return response()->json($response, 400); //400 Bad Request
         }
-        Fakultas::create($input);
+       
     }
 }
