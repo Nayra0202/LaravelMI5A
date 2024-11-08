@@ -21,3 +21,9 @@ Route::post('prodi', [ProdiController::class, 'storeProdi']);
 Route::delete('fakultas/{id}',[FakultasController::class, 'destroyFakultas']);
 
 Route::post('register', [AuthController::class, 'register']);
+
+Route::post('login', [AuthController::class, 'login']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('register', [AuthController::class, 'register']);
+    // Add other protected routes here
+});
