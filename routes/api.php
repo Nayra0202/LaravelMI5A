@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\FakultasController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProdiController;
@@ -18,3 +19,5 @@ Route::post('fakultas', [FakultasController::class, 'storeFakultas']);
 Route::post('prodi', [ProdiController::class, 'storeProdi']);
 
 Route::delete('fakultas/{id}',[FakultasController::class, 'destroyFakultas']);
+
+Route::post('register', [AuthController::class, 'register']);
