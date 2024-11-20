@@ -12,11 +12,13 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('fakultas', [FakultasController::class, 'getFakultas'])->middleware(['auth:sanctum','ability:read']);
-Route::get('prodi', [ProdiController::class, 'getProdi'])->middleware('auth:sanctum');
-Route::get('mahasiswas', [MahasiswaController::class, 'getMahasiswa'])->middleware('auth:sanctum');
-
 Route::post('fakultas', [FakultasController::class, 'storeFakultas'])->middleware(['auth:sanctum','ability:create']);
+Route::put('fakultas/{id}', [FakultasController::class, 'updateFakultas'])->middleware(['auth:sanctum','ability:update']);
+
+Route::get('prodi', [ProdiController::class, 'getProdi'])->middleware('auth:sanctum');
 Route::post('prodi', [ProdiController::class, 'storeProdi']);
+
+Route::get('mahasiswas', [MahasiswaController::class, 'getMahasiswa'])->middleware('auth:sanctum');
 Route::post('mahasiswas', [MahasiswaController::class, 'storeMahasiswa']);
 
 Route::delete('fakultas/{id}',[FakultasController::class, 'destroyFakultas']);
@@ -29,3 +31,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('register', [AuthController::class, 'register']);
     // Add other protected routes here
 });
+

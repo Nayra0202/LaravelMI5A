@@ -87,7 +87,6 @@ class FakultasController extends Controller
         //redirect beserta pesan success
         return redirect()->route('fakultas.index')->with('success',
         $request->nama.' berhasil diubah');
-
     }
 
     /**
@@ -147,4 +146,29 @@ class FakultasController extends Controller
             return response()->json($response, 400); //400 Bad Request
         }
     }
+
+        public function updateFakultas(Request $request,  $id)
+        {
+            $fakultas= Fakultas::find($id);
+            //dd($fakultas);
+            //validasi input sblm simpan
+            $input = $request->validate( [
+                "nama" => "required",
+                "dekan" => "required",
+                "singkatan" => "required"
+            ]);
+
+            //update data
+            $hasil = $fakultas->update($input);
+
+            if($hasil){ //jika data berhasil disimpan
+                $response['success'] = true;
+                $response['message'] = "Fakultas berhasil diubah";
+                return response()->json($response, 200); //201 utk created 
+            }else {
+                $response['success'] = false;
+                $response['message'] = "Fakultas gagal dihapus";
+                return response()->json($response, 400); //400 Bad Request
+            }
+        }
 }
